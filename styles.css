@@ -490,6 +490,7 @@ body {
     gap: 1rem;
     align-items: center;
     justify-self: center;
+    align-self: center;
 }
 
 .job-card {
@@ -708,7 +709,7 @@ body {
     .job-card {
         flex-direction: row; /* tetap horizontal */
         align-items: flex-start;
-        max-width: 100%;
+        max-width: 110%;
         max-height: 108px;
         width: 100%;
         text-align: left;
@@ -735,6 +736,9 @@ body {
         text-align: left;
         width: 100%;
     }
+    .location {
+        font-size: 0.55rem;
+    }
     .content h2 {
         font-size: 0.8rem;
         margin-bottom: 4px;
@@ -746,6 +750,11 @@ body {
         justify-content: space-between;
         width: 100%;
         text-align: left;
+        margin-top: 4px;
+    }
+    .desc {
+        font-size: 0.5rem;
+        opacity: 0.8;
     }
 }
     .grid-container {
@@ -793,6 +802,16 @@ body {
     }
 }
 
+.about-box {
+    justify-self: center;
+    align-self: center;
+}
+
+.sect-title {
+    justify-self: center;
+    align-self: center;
+}
+
 .section-title {
     margin-left: 10px;
 }
@@ -835,9 +854,9 @@ body {
 
 /* === INDIVIDUAL BOXES === */
 .social-box {
-  flex: 1 1 320px;
-  min-width: 240px;
-  padding: 16px;
+  flex: 1 1 120px;
+  min-width: 120px;
+  padding: 8px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.025);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -912,7 +931,6 @@ body {
 /* === MOBILE RESPONSIVE === */
 @media (max-width: 600px) {
   .social-footer {
-    flex-direction: column;
     padding: 12px;
     gap: 16px;
   }
@@ -920,7 +938,13 @@ body {
   .social-box {
     width: 100%;
     max-height: 200px;
-    min-width: none;
+    min-width: 110;
+    font-size: 60%;
+  }
+  
+  .social-box h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
   }
 
   .contact {
