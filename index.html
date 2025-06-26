@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title & SEO -->
+  <title>Reza Ali Muhammad – Portfolio & CV</title>
+  <meta name="description" content="Explore the creative portfolio of Reza Ali Muhammad – a frontend developer, graphic designer, and Web3 enthusiast based in Surabaya." />
+  <meta name="keywords" content="Reza Ali Muhammad, portfolio, frontend developer, Web3, Surabaya, graphic design, UI designer, blockchain, CV" />
+  <meta name="author" content="Reza Ali Muhammad" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Open Graph for social previews -->
+  <meta property="og:title" content="Reza Ali Muhammad – Portfolio & CV" />
+  <meta property="og:description" content="otw jadi web3 dev" />
+  <meta property="og:image" content="https://rezaali.it.student.pens.ac.id/Pictures/preview/preview.png" />
+  <meta property="og:url" content="https://rezaali.it.student.pens.ac.id/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Reza Ali Muhammad – Portfolio & CV" />
+  <meta name="twitter:description" content="otw jadi web3 dev" />
+  <meta name="twitter:image" content="https://rezaali.it.student.pens.ac.id/Pictures/preview/preview.png" />
+
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<header class="header">
+    <div class="grid-container">
+        <div class="profile-pic-container">
+        <img src="./Pictures/me-myself.png" alt="Reza Ali Profile Picture" class="profile-pic">
+        <img class="profile-pic-hover" src="./Pictures/me-myself-hover.png">
+        </div>
+        <div class="profile-info">
+            <h1 class="my-name" id="typewriter"></h1>
+            <script>
+            const messages = [
+          "Hi, I'm Reza Ali",
+          "Halo, saya Reza Ali",
+          "やほー、私は Ali",
+          "Hola, soy Reza Ali"
+            ];
+            let msgIndex = 0;
+            let charIndex = 0;
+            let typing = true;
+            const typewriterElem = document.getElementById('typewriter');
+
+            function typeWriter() {
+          // Always keep "Reza Ali" in Roman characters
+          const name = "Reza Ali!";
+          // Only change the greeting part
+          const greetings = [
+          "Hi, I'm",
+          "Halo, saya",
+          "やほー、私は",
+          "Hola, soy"  
+          ];
+          let greetingIndex = msgIndex;
+          let greeting = greetings[greetingIndex];
+          let fullText = greeting + " " + name;
+          let currentText = fullText.substring(0, charIndex);
+          // Add blinking underscore
+          typewriterElem.innerHTML = currentText + '<span class="type-cursor">|</span>';
+          if (typing) {
+              if (charIndex < fullText.length) {
+            charIndex++;
+            setTimeout(typeWriter, 80);
+              } else {
+            typing = false;
+            setTimeout(typeWriter, 1800);
+              }
+          } else {
+              if (charIndex > 0) {
+            charIndex--;
+            setTimeout(typeWriter, 30);
+              } else {
+            typing = true;
+            msgIndex = (msgIndex + 1) % greetings.length;
+            setTimeout(typeWriter, 400);
+              }
+          }
+            }
+            typeWriter();
+            </script>
+            <style>
+            .type-cursor {
+          display: inline-block;
+          width: 1ch;
+          animation: blink 0.8s steps(1) infinite;
+            }
+            @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+            }
+            .my-name {
+          font-size: 2.2rem;
+            }
+            @media (max-width: 600px) {
+          .my-name {
+              font-size: 1.2rem;
+          }
+            }
+            </style>
+            <p class="short-bio">rrzaalii | 0xalrz</p>
+            <div class="emoji-flex">
+                <li class="emoji-item">
+                    <span class="emoji">📍 </span>
+                    <span class="emoji-title">| Surabaya, Indonesia</span>
+                </li>
+                <li class="emoji-item">
+                    <span class="emoji">💻 </span>
+                    <span class="emoji-title">| IT Student</span>
+                </li>
+                <li class="emoji-item">
+                    <span class="emoji">🌐 </span>
+                    <span class="emoji-title">| Web3 Enthusiast</span>
+                </li>
+                <li class="emoji-item">
+                    <span class="emoji">🎨 </span>
+                    <span class="emoji-title">| Junior Graphic Designer</span>
+                </li>
+                <li class="emoji-item">
+                    <a href="https://www.linkedin.com/in/rrzaalii" target="_blank" style="text-decoration: none; color: inherit;">
+                        <span class="emoji">🔗</span>
+                        <span class="emoji-title">| LinkedIn</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+<body>
+<div class="about-box">
+  <section class="about-section">
+    <div class="header-row">
+      <h2 class="section-title">About Me</h2>
+      <label class="switch">
+        <input type="checkbox" id="lang-toggle">
+        <div class="switch-labels">
+          <span class="label-en">ID</span>
+          <div class="circle"></div>
+          <span class="label-id">EN</span>
+        </div>
+      </label>
+    </div>
+
+    <div class="about-content">
+      <p id="about-text">
+        Hey, I’m Reza Ali. currently an IT student, kinda into tech stuff but also like messing around with graphic design sometimes. been exploring web3 and all that digital chaos lately, just tryna learn as i go. not really sure where i’m heading yet, but i’m enjoying the ride, building small things, figuring stuff out one step at a time.
+      </p>
+      <style>
+        @media (max-width: 600px) {
+          #about-text {
+            font-size: 0.78rem;
+            margin-top: 12px;
+          }
+        }
+      </style>
+    </div>
+  </section>
+
+<script> 
+    const aboutTexts = {
+        id: `Hey, I’m Reza Ali. currently an IT student, kinda into tech stuff but also like messing around with graphic design sometimes. been exploring web3 and all that digital chaos lately, just tryna learn as i go. not really sure where i’m heading yet, but i’m enjoying the ride, building small things, figuring stuff out one step at a time.`,
+        en: `Halo, Aku Reza Ali. mahasiswa IT sing doyan ngutak-atik teknologi, kadang iseng desain buat seru-seruan, kadang juga nyemplung ke dunia web3 sama crypto meskipun ndang mumet. saiki lagi fase nyoba-nyoba opo wae sing penting ana hubungane karo digital. urip yo tak jalani pelan-pelan, sambil belajar, sambil garap project sak semampuku. durung ngerti bakal jadi opo, tapi sing penting dinikmati ae proses e. ojo lali ngopi, ngendok sek, ben otak gak ngelag.`
+    };
+
+    const toggle = document.getElementById('lang-toggle');
+    const aboutTextElem = document.getElementById('about-text');
+
+    // Make the about text justified
+    aboutTextElem.style.textAlign = "justify";
+
+    toggle.addEventListener('change', function () {
+        aboutTextElem.textContent = toggle.checked ? aboutTexts.en : aboutTexts.id;
+    });
+</script>
+</div>
+<div class="skills-container">
+    <section class="skills-section-skills">
+        <h2 class="skills-title-skills">What do I use :</h2>
+            <div class="slider-container-skills">
+                 <div class="slider-track-skills" id="slider-track-skills">
+                 <div class="slide-skills"><span class="icon-skills">🎬</span> CapCut</div>
+                 <div class="slide-skills"><span class="icon-skills">🌀</span> Blender</div>
+                 <div class="slide-skills"><span class="icon-skills">🎨</span> Canva</div>
+                 <div class="slide-skills"><span class="icon-skills">🖌️</span> Figma</div>
+                 <div class="slide-skills"><span class="icon-skills">🌐</span> HTML</div>
+                 <div class="slide-skills"><span class="icon-skills">🎀</span> CSS</div>
+                 <div class="slide-skills"><span class="icon-skills">💻</span> C</div>
+                 <!-- Duplicate for seamless loop -->
+                 <div class="slide-skills"><span class="icon-skills">🎬</span> CapCut</div>
+                 <div class="slide-skills"><span class="icon-skills">🌀</span> Blender</div>
+                 <div class="slide-skills"><span class="icon-skills">🎨</span> Canva</div>
+                 <div class="slide-skills"><span class="icon-skills">🖌️</span> Figma</div>
+                 <div class="slide-skills"><span class="icon-skills">🌐</span> HTML</div>
+                 <div class="slide-skills"><span class="icon-skills">🎀</span> CSS</div>
+                 <div class="slide-skills"><span class="icon-skills">💻</span> C</div>
+            </div>
+        </div>
+</div>
+</section>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('slider-track-skills');
+    // Duplicate slides for seamless loop if not already duplicated
+    if (track.children.length === 7) {
+        for (let i = 0; i < 7; i++) {
+            track.appendChild(track.children[i].cloneNode(true));
+        }
+    }
+    // Dynamically set animation distance based on track width
+    const trackWidth = track.scrollWidth / 2;
+    track.style.animationDuration = (trackWidth / 60) + 's';
+    const styleSheet = document.createElement('style');
+    styleSheet.innerHTML = `
+    @keyframes scroll-skills {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-${trackWidth}px); }
+    }`;
+    document.head.appendChild(styleSheet);
+});
+</script>
+<section class="experiences-section">
+    <h2 class="sect-title">Experiences</h2>
+</section>
+ <div class="job-container">
+
+        <div class="job-card">
+      <img src="./Pictures/jobcard/med.png" alt="avatar" />
+      <div class="content">
+        <h2>Magazine Editor</h2>
+        <p class="location">Sekolah Alam Insan Mulia</p>
+        <p class="desc">Designed and managed school magazine layouts with the team</p>
+        <div class="footer">
+          <p><i>Skills: layout design, teamwork.</i></p>
+          <span>May 2024 – May 2025</span>
+        </div>
+      </div>
+    </div>
+
+        <div class="job-card">
+      <img src="./Pictures/jobcard/wd.png" alt="avatar" />
+      <div class="content">
+        <h2>Web Development</h2>
+        <p class="location">PT. Neo Energi Teknologi</p>
+        <p class="desc">Did a short internship, worked on web dev with WordPress</p>
+        <div class="footer">
+          <p><i>Skills: web dev, WordPress</i></p>
+          <span>February 2024</span>
+        </div>
+      </div>
+
+    </div>
+
+
+        <div class="job-card">
+      <img src="./Pictures/jobcard/pm.png" alt="avatar" />
+      <div class="content">
+        <h2>Project Management</h2>
+        <p class="location">Pilarmedia Indonesia</p>
+        <p class="desc">Learned project management and a bit of UI/UX during a short internship.</p>
+        <div class="footer">
+          <p><i>Skills: collaboration, user reseach.</i></p>
+          <span>February 2023</span>
+        </div>
+      </div>
+    </div>
+
+
+        <div class="job-card">
+      <img src="./Pictures/jobcard/jgd.png" alt="avatar" />
+      <div class="content">
+        <h2>Junior Graphic Designer</h2>
+        <p class="location">Art and Design Department, OSIS SMA SAIM</p>
+        <p class="desc">Made cool posters for IG & print, and built the first OSIS selection website.</p>
+        <div class="footer">
+          <p><i>Skills: graphic design, basic web dev</i></p>
+          <span>October 2022 – August 2024</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  </div>
+
+
+  <script>
+    const cards = document.querySelectorAll(".job-card");
+
+    window.addEventListener("scroll", () => {
+      const center = window.innerHeight / 2;
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(center - cardCenter);
+
+        const scale = Math.max(0.95, 1 - distance / center * 0.1);
+        card.style.transform = `scale(${scale})`;
+      });
+    });
+  </script>
+
+
+  <section class="proj-section">
+    <h2 class="sect-title" style="margin-top: 50px; margin-bottom: 50px;">Projects</h2>
+</section>
+
+  <div class="grid-proyek">
+    <a class="projbox box1" href="https://www.figma.com/design/vORe9kfeiRXXhuwiXoPDKh/Portfolio-Collection---Reza-Ali?t=xANX1Hd2GOQJJuPa-1">
+      <img src="./Pictures/prj/proj1-normal.png" alt="rrzaali-pre-it-student-portfolio" />
+      <div class="hover-img"><img src="./Pictures/prj/proj1-hover.png" alt="" /></div>
+    </a>
+    <a class="projbox box2" href="coming-soon.html">
+      <img src="./Pictures/prj/cmgsoon-normal.png" alt="Coming Soon" />
+      <div class="hover-img"><img src="./Pictures/prj/cmgsoon-hover.png" alt="Coming Soon Hover" /></div>
+    </a>
+    <a class="projbox box3" href="coming-soon.html">
+      <img src="./Pictures/prj/cmgsoon-normal.png" alt="Coming Soon" />
+      <div class="hover-img"><img src="./Pictures/prj/cmgsoon-hover.png" alt="Coming Soon Hover" /></div>
+    </a>
+    <a class="projbox box4" href="coming-soon.html">
+      <img src="./Pictures/prj/cmgsoon-normal.png" alt="Coming Soon" />
+      <div class="hover-img"><img src="./Pictures/prj/cmgsoon-hover.png" alt="Coming Soon Hover" /></div>
+    </a>
+    <a class="projbox box5" href="coming-soon.html">
+      <img src="./Pictures/prj/cmgsoon-normal.png" alt="Coming Soon" />
+      <div class="hover-img"><img src="./Pictures/prj/cmgsoon-hover.png" alt="Coming Soon Hover" /></div>
+    </a>
+    <a class="projbox box6" href="coming-soon.html">
+      <img src="./Pictures/prj/cmgsoon-normal.png" alt="Coming Soon" />
+      <div class="hover-img"><img src="./Pictures/prj/cmgsoon-hover.png" alt="Coming Soon Hover" /></div>
+    </a>
+    <a class="projbox box7" href="coming-soon.html">
+      <img src="./Pictures/prj/cmgsoon-normal.png" alt="Coming Soon" />
+      <div class="hover-img"><img src="./Pictures/prj/cmgsoon-hover.png" alt="Coming Soon Hover" /></div>
+    </a>
+  </div>
+
+</body>
+<div class="social-footer">
+  <div class="social-box">
+    <h3>Reza Ali</h3>
+    <ul>
+      <li><a href="https://instagram.com/rrzaalii" target="_blank">@rrzaalii — Instagram</a></li>
+      <li><a href="https://twitter.com/rrzaalii" target="_blank">@rrzaalii — Twitter</a></li>
+      <li><a href="https://youtube.com/@rrzaalii" target="_blank">@rrzaalii — YouTube</a></li>
+      <li><a href="https://tiktok.com/@rrzaalii" target="_blank">@rrzaalii — TikTok</a></li>
+    </ul>
+  </div>
+
+  <div class="social-box">
+    <h3>ALRZ</h3>
+    <ul>
+      <li><a href="https://instagram.com/0xalrz" target="_blank">@0xalrz — Instagram</a></li>
+      <li><a href="https://twitter.com/0xalrz" target="_blank">@0xalrz — Twitter</a></li>
+      <li><a href="https://youtube.com/@0xalrz" target="_blank">@0xalrz — YouTube</a></li>
+      <li><a href="https://tiktok.com/@0xalrz" target="_blank">@0xalrz — TikTok</a></li>
+    </ul>
+  </div>
+
+  <div class="contact">
+    <p>📩 Contact: <a href="mailto:rrzaalii00@gmail.com">rrzaalii00@gmail.com</a></p>
+  </div>
+</div>
+</html>

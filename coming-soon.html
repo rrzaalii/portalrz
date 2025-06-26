@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Chain slider styles */
+        .chain-container {
+            margin: 40px auto 0 auto;
+            max-width: 600px;
+            overflow: hidden;
+            background: transparent;
+            padding: 0;
+        }
+        .chain-section-title {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 18px;
+            font-family: inherit;
+        }
+        .chain-slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            height: 80px;
+            background: transparent;
+        }
+        .chain-slider-track {
+            display: flex;
+            width: max-content;
+            animation: scroll-chain 10s linear infinite;
+        }
+        .chain-slide {
+            flex: 0 0 auto;
+            width: 80px;
+            height: 80px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .chain-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: rotate(90deg);
+            display: block;
+        }
+        @keyframes scroll-chain {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-560px); }
+        }
+        /* Responsive */
+        @media (max-width: 700px) {
+            .chain-container { max-width: 98vw; }
+            .chain-slider-container, .chain-slide { height: 60px; }
+            .chain-slide { width: 60px; }
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <div class="coming-soon-container">
+        <h1 class="coming-soon-title">Coming Soon</h1>
+        <p class="coming-soon-subtitle">
+            Our website is under construction.<br>
+            We'll be here soon with our new awesome site.
+        </p>
+        <a href="index.html" class="go-back-link">Go back to main page</a>
+        <div class="chain-container">
+            <section>
+                <div class="chain-slider-container">
+                    <div class="chain-slider-track" id="chain-slider-track">
+                        <div class="chain-slide"><img src="./Pictures/chain/chaintex.png" alt="Chain"></div>
+                        <div class="chain-slide"><img src="./Pictures/chain/chaintex.png" alt="Chain"></div>
+                        <div class="chain-slide"><img src="./Pictures/chain/chaintex.png" alt="Chain"></div>
+                        <div class="chain-slide"><img src="./Pictures/chain/chaintex.png" alt="Chain"></div>
+                        <div class="chain-slide"><img src="./Pictures/chain/chaintex.png" alt="Chain"></div>
+                        <div class="chain-slide"><img src="./Pictures/chain/chaintex.png" alt="Chain"></div>
+                        <div class="chain-slide"><img src="./Pictures/chain/chaintex.png" alt="Chain"></div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="chain-slide"><img src="./Pictures/chain/chaintex.png" alt="Chain"></div>
+                        <div class="chain-slide"><img src="./Pictures/chain/chaintex.png" alt="Chain"></div>
+                        <div class="chain-slide"><img src="./Pictures/chain/chaintex.png" alt="Chain"></div>
+                        <div class="chain-slide"><img src="./Pictures/chain/chaintex.png" alt="Chain"></div>
+                        <div class="chain-slide"><img src="./Pictures/chain/chaintex.png" alt="Chain"></div>
+                        <div class="chain-slide"><img src="./Pictures/chain/chaintex.png" alt="Chain"></div>
+                        <div class="chain-slide"><img src="./Pictures/chain/chaintex.png" alt="Chain"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="coming-soon-footer">
+            &copy; 2025 Reza Ali. All rights reserved.
+        </div>
+    </div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            const track = document.getElementById('chain-slider-track');
+            const slide = track.children[0];
+            const slideWidth = slide.offsetWidth;
+            const slidesCount = track.children.length / 2;
+            const totalWidth = slideWidth * slidesCount;
+
+            // Set animation distance dynamically
+            const styleSheet = document.createElement('style');
+            styleSheet.innerHTML = `
+                @keyframes scroll-chain {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-${totalWidth}px); }
+                }
+            `;
+            document.head.appendChild(styleSheet);
+
+            // If not already duplicated, duplicate for seamless loop
+            if (track.children.length === slidesCount) {
+                for (let i = 0; i < slidesCount; i++) {
+                    track.appendChild(track.children[i].cloneNode(true));
+                }
+            }
+        });
+    </script>
+</body>
+</html>
